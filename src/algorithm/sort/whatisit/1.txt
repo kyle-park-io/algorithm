@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+var (
+	l     = 10
+	input = [10]int{59, 28, 26, 40, 51, 24, 44, 23, 48, 86}
+)
+
+func main() {
+
+	for i := 0; i < l-1; i++ {
+		for j := i + 1; j >= 1; j-- {
+			if input[j] < input[j-1] {
+				s := input[j-1]
+				input[j-1] = input[j]
+				input[j] = s
+			}
+		}
+	}
+
+	fmt.Println(input)
+}
